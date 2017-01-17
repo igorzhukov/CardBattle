@@ -10,12 +10,19 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var cpuImageView: UIImageView!
+    
     @IBOutlet weak var playerImageView: UIImageView!
     @IBOutlet weak var playerScoreLabel: UILabel!
-    @IBOutlet weak var cpuScoreLabel: UILabel!
+    var playerScore = 0
     
-    let cardsArray = ["ace", "card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "jcak", "queen", "king"]
+    @IBOutlet weak var cpuImageView: UIImageView!
+    @IBOutlet weak var cpuScoreLabel: UILabel!
+    var cpuScore = 0
+    
+
+   
+    
+    let cardsArray = ["card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "jack", "queen", "king", "ace"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +36,22 @@ class ViewController: UIViewController {
 
     @IBAction func dealTapped(_ sender: UIButton) {
         
-        var playerRandomNumber = arc4random_uniform(13)
-        playerImageView.image = UIImage(named: cardsArray[palyerRandomNumber])
+        let playerRandomNumber = Int(arc4random_uniform(13))
+        playerImageView.image = UIImage(named: cardsArray[playerRandomNumber])
+        
+        let cpuRandomNumber = Int(arc4random_uniform(13))
+        cpuImageView.image = UIImage(named: cardsArray[cpuRandomNumber])
+        
+        // Compare the card numbers 
+        if playerRandomNumber > cpuRandomNumber {
+            playerScore += 1
+            playerScoreLabel.text = String(playerScore)
+        } else if playerRandomNumber == cpuRandomNumber {
+            //nothing to do in that case
+        } else {
+            cpuScore += 1
+            cpuScoreLabel.text = String(cpuScore)
+        }
         
     }
     
