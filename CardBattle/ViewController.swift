@@ -36,17 +36,22 @@ class ViewController: UIViewController {
 
     @IBAction func dealTapped(_ sender: UIButton) {
         
-        let playerRandomNumber = Int(arc4random_uniform(13))
-        playerImageView.image = UIImage(named: cardsArray[playerRandomNumber])
+        var arrayWithRandomNumber = [0, 0]
         
-        let cpuRandomNumber = Int(arc4random_uniform(13))
-        cpuImageView.image = UIImage(named: cardsArray[cpuRandomNumber])
+        for i in 1...2 {
+            arrayWithRandomNumber[i-1] = Int(arc4random_uniform(13))
+        }
         
+        playerImageView.image = UIImage(named: cardsArray[arrayWithRandomNumber[0]])
+        
+        cpuImageView.image = UIImage(named: cardsArray[arrayWithRandomNumber[1]])
+        
+    
         // Compare the card numbers 
-        if playerRandomNumber > cpuRandomNumber {
+        if arrayWithRandomNumber[0] > arrayWithRandomNumber[1] {
             playerScore += 1
             playerScoreLabel.text = String(playerScore)
-        } else if playerRandomNumber == cpuRandomNumber {
+        } else if arrayWithRandomNumber[0] == arrayWithRandomNumber[1] {
             //nothing to do in that case
         } else {
             cpuScore += 1
