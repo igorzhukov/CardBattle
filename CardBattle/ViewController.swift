@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     
     @IBOutlet weak var playerImageView: UIImageView!
     @IBOutlet weak var playerScoreLabel: UILabel!
@@ -19,8 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var cpuScoreLabel: UILabel!
     var cpuScore = 0
     
-
-   
+    
+    
     
     let cardsArray = ["card2", "card3", "card4", "card5", "card6", "card7", "card8", "card9", "card10", "jack", "queen", "king", "ace"]
     
@@ -28,12 +28,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
+    
     @IBAction func dealTapped(_ sender: UIButton) {
         
         var arrayWithRandomNumber = [0, 0]
@@ -46,8 +42,8 @@ class ViewController: UIViewController {
         
         cpuImageView.image = UIImage(named: cardsArray[arrayWithRandomNumber[1]])
         
-    
-        // Compare the card numbers 
+        
+        // Compare the card numbers
         if arrayWithRandomNumber[0] > arrayWithRandomNumber[1] {
             playerScore += 1
             playerScoreLabel.text = String(playerScore)
@@ -60,6 +56,6 @@ class ViewController: UIViewController {
         
     }
     
-
+    
 }
 
