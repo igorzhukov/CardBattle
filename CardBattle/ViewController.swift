@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     var cardsArray = [Card]()
     
     
-    func cardsInit(from arrayWithCardsNames: [String]) {
+    func cardsInitUsing(_: [String]) {
         for (index, cardName) in cardsNamesArray.enumerated()  {
             let card = Card()
             card.name = cardName
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
             super.viewDidLoad()
             
             // cardsArray init for further parsing
-            cardsInit(from: cardsNamesArray)
+            cardsInitUsing(cardsNamesArray)
             
         }
         
@@ -55,29 +55,28 @@ class ViewController: UIViewController {
                 arrayWithRandomNumber[i] = Int(arc4random_uniform(13))
             }
             
-            let playerImageName = UIImage(named: cardsArray[arrayWithRandomNumber[0]].name!)
-            playerImageView.image = playerImageName
+            // set assets to player and cpu cardViews
+            guard let playerImageString = cardsArray[arrayWithRandomNumber[0]].name else {return}
+            playerImageView.image = UIImage(named: playerImageString)
             
-            let cpuImageName = UIImage(named: cardsArray[arrayWithRandomNumber[1]].name!)
-            cpuImageView.image = cpuImageName
+            guard let cpuImageString = cardsArray[arrayWithRandomNumber[1]].name else {return}
+            cpuImageView.image = UIImage(named: cpuImageString)
             
             
 
             
             
-//            // Compare the card numbers
-//            if arrayWithRandomNumber[0] > arrayWithRandomNumber[1] {
-//                playerScore += 1
-//                playerScoreLabel.text = String(playerScore)
-//            } else if arrayWithRandomNumber[0] == arrayWithRandomNumber[1] {
-//                //nothing to do in that case
-//            } else {
-//                cpuScore += 1
-//                cpuScoreLabel.text = String(cpuScore)
-//            }
+            // Compare the card numbers
+            if arrayWithRandomNumber[0] > arrayWithRandomNumber[1] {
+                playerScore += 1
+                playerScoreLabel.text = String(playerScore)
+            } else {
+                cpuScore += 1
+                cpuScoreLabel.text = String(cpuScore)
+            }
             
         }
-        
+    
         
 }
 
