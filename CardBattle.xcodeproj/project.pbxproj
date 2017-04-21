@@ -45,6 +45,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		424BE5281EAA266E0037F319 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				429851D51E254144006B5EFF /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
 		429851C71E254144006B5EFF = {
 			isa = PBXGroup;
 			children = (
@@ -64,9 +72,9 @@
 		429851D21E254144006B5EFF /* CardBattle */ = {
 			isa = PBXGroup;
 			children = (
+				424BE5281EAA266E0037F319 /* ViewController */,
 				424BE5251EA9499D0037F319 /* Model */,
 				429851D31E254144006B5EFF /* AppDelegate.swift */,
-				429851D51E254144006B5EFF /* ViewController.swift */,
 				429851D71E254144006B5EFF /* Main.storyboard */,
 				429851DA1E254144006B5EFF /* Assets.xcassets */,
 				429851DC1E254144006B5EFF /* LaunchScreen.storyboard */,

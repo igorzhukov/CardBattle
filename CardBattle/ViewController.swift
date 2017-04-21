@@ -35,9 +35,6 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -69,8 +66,6 @@ class ViewController: UIViewController {
         // MARK: - compare the card values to update score
         guard let playerImageValue = cardsArray[arrayWithRandomNumber[0]].value else {return}
         guard let cpuImageValue = cardsArray[arrayWithRandomNumber[1]].value else {return}
-        print(playerImageValue)
-        print(cpuImageValue)
         
         if playerImageValue > cpuImageValue {
             playerScore += 1
