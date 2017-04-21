@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		424BE5271EA949CC0037F319 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424BE5261EA949CC0037F319 /* Card.swift */; };
 		429851D41E254144006B5EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429851D31E254144006B5EFF /* AppDelegate.swift */; };
 		429851D61E254144006B5EFF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429851D51E254144006B5EFF /* ViewController.swift */; };
 		429851D91E254144006B5EFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 429851D71E254144006B5EFF /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		424BE5261EA949CC0037F319 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		429851D01E254144006B5EFF /* CardBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CardBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		429851D31E254144006B5EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		429851D51E254144006B5EFF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		424BE5251EA9499D0037F319 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				424BE5261EA949CC0037F319 /* Card.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		429851C71E254144006B5EFF = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +64,7 @@
 		429851D21E254144006B5EFF /* CardBattle */ = {
 			isa = PBXGroup;
 			children = (
+				424BE5251EA9499D0037F319 /* Model */,
 				429851D31E254144006B5EFF /* AppDelegate.swift */,
 				429851D51E254144006B5EFF /* ViewController.swift */,
 				429851D71E254144006B5EFF /* Main.storyboard */,
@@ -137,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				429851D61E254144006B5EFF /* ViewController.swift in Sources */,
+				424BE5271EA949CC0037F319 /* Card.swift in Sources */,
 				429851D41E254144006B5EFF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +309,7 @@
 				429851E41E254144006B5EFF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
