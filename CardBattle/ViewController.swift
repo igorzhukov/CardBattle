@@ -32,51 +32,56 @@ class ViewController: UIViewController {
             self.cardsArray.append(card)
         }
     }
-        
-        
-        
-        
-        
-        
-        override func viewDidLoad() {
-            super.viewDidLoad()
-            
-            // cardsArray init for further parsing
-            cardsInitUsing(cardsNamesArray)
-            
-        }
-        
-        
-        @IBAction func dealTapped(_ sender: UIButton) {
-            
-            var arrayWithRandomNumber = [0, 0]
-            
-            for i in 0...1 {
-                arrayWithRandomNumber[i] = Int(arc4random_uniform(13))
-            }
-            
-            // set assets to player and cpu cardViews
-            guard let playerImageString = cardsArray[arrayWithRandomNumber[0]].name else {return}
-            playerImageView.image = UIImage(named: playerImageString)
-            
-            guard let cpuImageString = cardsArray[arrayWithRandomNumber[1]].name else {return}
-            cpuImageView.image = UIImage(named: cpuImageString)
-            
-            
-
-            
-            
-            // Compare the card numbers
-            if arrayWithRandomNumber[0] > arrayWithRandomNumber[1] {
-                playerScore += 1
-                playerScoreLabel.text = String(playerScore)
-            } else {
-                cpuScore += 1
-                cpuScoreLabel.text = String(cpuScore)
-            }
-            
-        }
     
+    
+    
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        // cardsArray init for further parsing
+        cardsInitUsing(cardsNamesArray)
+        
+    }
+    
+    
+    @IBAction func dealTapped(_ sender: UIButton) {
+        
+        var arrayWithRandomNumber = [0, 0]
+        
+        for i in 0...1 {
+            arrayWithRandomNumber[i] = Int(arc4random_uniform(13))
+        }
+        
+        // MARK:  - set assets to player and cpu cardViews
+        guard let playerImageString = cardsArray[arrayWithRandomNumber[0]].name else {return}
+        playerImageView.image = UIImage(named: playerImageString)
+        
+        guard let cpuImageString = cardsArray[arrayWithRandomNumber[1]].name else {return}
+        cpuImageView.image = UIImage(named: cpuImageString)
+        
+        
+        
+        
+        
+        // MARK: - compare the card values to update score
+        guard let playerImageValue = cardsArray[arrayWithRandomNumber[0]].value else {return}
+        guard let cpuImageValue = cardsArray[arrayWithRandomNumber[1]].value else {return}
+        print(playerImageValue)
+        print(cpuImageValue)
+        
+        if playerImageValue > cpuImageValue {
+            playerScore += 1
+            playerScoreLabel.text = String(playerScore)
+        } else {
+            cpuScore += 1
+            cpuScoreLabel.text = String(cpuScore)
+        }
+        
+    }
+    
+    
 }
 
