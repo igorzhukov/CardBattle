@@ -53,10 +53,10 @@ class ViewController: UIViewController {
         }
         
         // MARK:  - set assets to player and cpu cardViews
-        guard let playerImageString = cardsArray[arrayWithRandomNumber[0]].name else {return}
+        guard let playerImageString = cardsArray[arrayWithRandomNumber[0]].name else { return }
         playerImageView.image = UIImage(named: playerImageString)
         
-        guard let cpuImageString = cardsArray[arrayWithRandomNumber[1]].name else {return}
+        guard let cpuImageString = cardsArray[arrayWithRandomNumber[1]].name else { return }
         cpuImageView.image = UIImage(named: cpuImageString)
         
         
@@ -64,8 +64,8 @@ class ViewController: UIViewController {
         
         
         // MARK: - compare the card values to update score
-        guard let playerImageValue = cardsArray[arrayWithRandomNumber[0]].value else {return}
-        guard let cpuImageValue = cardsArray[arrayWithRandomNumber[1]].value else {return}
+        guard let playerImageValue = cardsArray[arrayWithRandomNumber[0]].value else { return }
+        guard let cpuImageValue = cardsArray[arrayWithRandomNumber[1]].value else { return }
         
         if playerImageValue > cpuImageValue {
             playerScore += 1
